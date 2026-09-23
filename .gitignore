@@ -1,0 +1,11 @@
+node_modules/
+.next/
+out/
+.DS_Store
+*.log
+npm-debug.log*
+
+# Local/editor files
+.vscode/
+.idea/
+*.swp

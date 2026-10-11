@@ -27,22 +27,25 @@ If cloud sync is ever added, the data layer can be moved behind a small persiste
 
 ### Current
 
-- Full Physics, Chemistry and Biology chapter/unit structure based on the current NMC 2026 syllabus reference used for this project (30 mapped Physics chapters, 21 Chemistry chapter entries, 32 Biology chapters = 84 tracked entries; 20 + 20 + 10 official units)
+- **Live Exam Countdown** — real-time countdown to 03 May 2027 (14:00 IST) with live days, hours, minutes, seconds, and study pace calculation (recommended chapters/week)
+- Full Physics, Chemistry and Biology chapter/unit structure based on the current NMC syllabus (30 Physics, 22 Chemistry, 32 Biology = 84 tracked entries across 50 units)
 - 2026 paper PYQ counts mapped to chapters
-- 2026 marks footprint (`PYQs × 4`) shown next to chapter data
-- Overall completion percentage
-- Subject-level completion percentages
-- Unit-level completion percentages
-- Chapter completion checkbox/toggle
+- 2026 marks footprint (`PYQs × 4`) and overall score footprint (`covered / 720 marks`)
+- High-yield indicators for high-weightage chapters (≥ 3 PYQs / 12+ marks)
+- Priority starring (★) to bookmark critical chapters for revision
+- Global instant search across all 84 chapters with keyboard shortcut (`/`)
+- Filters: All / Not started / In progress / Completed / High Yield / Prioritized ★
+- Unit batch completion toggle ("Complete unit" / "Reset unit")
+- Local-first JSON backup export and import to safely preserve progress across browsers
+- One-click copy summary for study journals and mentor check-ins
 - Persistent progress using browser `localStorage`
-- Subject drill-down pages
-- Search chapters and units
-- Filters: All / Not started / In progress / Completed
-- Reset one subject or reset everything
+- Subject drill-down pages with compact countdown pill
+- Keyboard navigation (Escape to navigate back or clear search)
 - Responsive desktop/tablet/mobile layout
-- Minimal black/white/grey visual system
-- Smooth, restrained motion rather than long decorative animations
+- Minimal black/white/grey visual system with tabular figures to prevent layout jitter
+- Smooth, restrained motion with `prefers-reduced-motion` accessibility support
 - Static export suitable for simple hosting
+
 
 ### Intentional design constraints
 

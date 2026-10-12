@@ -1,0 +1,976 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Essential Packages ---
+\usepackage[top=2cm,bottom=2cm,left=1.8cm,right=1.8cm,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{booktabs,array,tabularx,longtable}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins,breakable}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[hidelinks,colorlinks=true,linkcolor=teal!80!black,urlcolor=teal!80!black,citecolor=teal!80!black]{hyperref}
+
+% --- Custom Colors ---
+\definecolor{primaryteal}{RGB}{0, 95, 115}
+\definecolor{accentblue}{RGB}{10, 147, 150}
+\definecolor{lightteal}{RGB}{235, 245, 245}
+\definecolor{boxframe}{RGB}{148, 210, 189}
+\definecolor{goldaccent}{RGB}{202, 103, 2}
+\definecolor{goldbg}{RGB}{254, 249, 231}
+\definecolor{biogreen}{RGB}{40, 116, 101}
+\definecolor{biobg}{RGB}{240, 249, 244}
+\definecolor{darkcharcoal}{RGB}{33, 37, 41}
+
+% --- Typography & Spacing ---
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+
+% --- Header & Footer ---
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small\textbf{\color{primaryteal}NEET High-Yield Revision Guide}}
+\chead{\small\color{gray}Core Concepts, Key Formulas \& NCERT Review}
+\rhead{\small\textbf{\color{primaryteal}Prepared by spdedsec}}
+\cfoot{\small\thepage}
+\renewcommand{\headrulewidth}{0.6pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% --- Section Styling ---
+\titleformat{\section}
+  {\Large\bfseries\color{primaryteal}}
+  {\thesection.}{0.8em}{}
+  [{\titlerule[1pt]}]
+
+\titleformat{\subsection}
+  {\large\bfseries\color{accentblue}}
+  {\thesubsection}{0.6em}{}
+
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{darkcharcoal}}
+  {\thesubsubsection}{0.5em}{}
+
+% --- Custom Callout Boxes ---
+\newtcolorbox{formulabox}[1][Key Formula \& Principles]{
+  enhanced,
+  breakable,
+  colback=lightteal,
+  colframe=primaryteal,
+  fonttitle=\bfseries\color{white},
+  coltitle=white,
+  title={#1},
+  arc=3mm,
+  boxrule=0.9pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt
+}
+
+\newtcolorbox{examtip}[1][High-Yield NEET Concept / Exam Trap]{
+  enhanced,
+  breakable,
+  colback=goldbg,
+  colframe=goldaccent,
+  fonttitle=\bfseries\color{white},
+  coltitle=white,
+  title={#1},
+  arc=3mm,
+  boxrule=0.9pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt
+}
+
+\newtcolorbox{biobox}[1][NCERT High-Yield Focus]{
+  enhanced,
+  breakable,
+  colback=biobg,
+  colframe=biogreen,
+  fonttitle=\bfseries\color{white},
+  coltitle=white,
+  title={#1},
+  arc=3mm,
+  boxrule=0.9pt,
+  left=8pt, right=8pt, top=6pt, bottom=6pt
+}
+
+\begin{document}
+
+% --- Title Page Header ---
+\begin{center}
+  {\huge\bfseries\color{primaryteal} NEET Comprehensive Revision Guide}\\[6pt]
+  {\Large\bfseries\color{accentblue} High-Yield Concepts, Core Formulas \& Essential NCERT Highlights}\\[10pt]
+  {\large\textbf{Author \& Compilation:} \texttt{spdedsec} \quad\textbar\quad \textbf{Subject Coverage:} Physics, Chemistry, Botany \& Zoology}\\[4pt]
+  {\small\color{gray} Strict NCERT \& NMC Syllabus-Aligned Comprehensive Master Notes}
+\end{center}
+\vspace{-4pt}
+\hrule height 1.2pt
+\vspace{10pt}
+
+% =========================================================================
+% SECTION: SYLLABUS & CURRICULUM OVERVIEW
+% =========================================================================
+\section*{Curriculum \& Topic Coverage Overview}
+\addcontentsline{toc}{section}{Curriculum \& Topic Coverage Overview}
+
+This revision handbook serves as an exhaustive, fast-track reference guide covering 10 high-yield chapters across all four core NEET subjects. Every module synthesizes standard NCERT theory, foundational mechanics, key derivations, reaction pathways, and high-probability past-year question patterns.
+
+\begin{tcolorbox}[enhanced,colback=white,colframe=primaryteal,arc=2mm,boxrule=1pt]
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+  \item \textbf{\color{primaryteal}Physics}
+  \begin{itemize}[label=$\circ$, itemsep=1pt]
+    \item \textbf{Laws of Motion} --- Newton's Laws, Momentum, Impulse, Static \& Kinetic Friction, Circular Motion \& Banking Dynamics.
+    \item \textbf{Work, Energy and Power} --- Work-Energy Theorem, Conservative Forces, Spring \& Gravitational Potential Energy, Vertical Circular Motion, Collisions.
+    \item \textbf{Centre of Mass and System of Particles} --- Centre of Mass of Standard Rigid Bodies, Conservation of Linear Momentum, Rotational Dynamics, Moment of Inertia, Rolling Motion.
+  \end{itemize}
+
+  \item \textbf{\color{primaryteal}Chemistry}
+  \begin{itemize}[label=$\circ$, itemsep=1pt]
+    \item \textbf{Electrochemistry} --- Galvanic Cells, Nernst Equation, Gibbs Free Energy, Electrolytic Conductivity, Kohlrausch's Law, Faraday's Laws, Batteries \& Fuel Cells.
+    \item \textbf{Chemical Kinetics} --- Rate Law, Integrated Rate Equations (Zero \& First Order), Half-Life Relations, Arrhenius Equation, Activation Energy, Collision Theory.
+    \item \textbf{Structure of Atom} --- Bohr's Atomic Model, Rydberg Formula, de Broglie Wavelength, Heisenberg Uncertainty Principle, Quantum Numbers, Electronic Configuration Principles.
+  \end{itemize}
+
+  \item \textbf{\color{primaryteal}Biology --- Botany}
+  \begin{itemize}[label=$\circ$, itemsep=1pt]
+    \item \textbf{Plant Kingdom} --- Algae (Chlorophyceae, Phaeophyceae, Rhodophyceae), Bryophytes, Pteridophytes (Heterospory \& Seed Habit Precursor), Gymnosperms, Angiosperms, Alternation of Generations.
+    \item \textbf{Morphology of Flowering Plants} --- Modifications of Roots, Stems, and Leaves; Inflorescence; Floral Architecture; Aestivation; Placentation; Key Families (Fabaceae, Solanaceae, Liliaceae).
+  \end{itemize}
+
+  \item \textbf{\color{primaryteal}Biology --- Zoology}
+  \begin{itemize}[label=$\circ$, itemsep=1pt]
+    \item \textbf{Excretory Products \& Their Elimination} --- Ammonotelism, Ureotelism, Uricotelism; Nephron Anatomy; Ultrafiltration; Counter-Current Mechanism; Hormonal Regulation (JGA/RAAS, ADH, ANF); Renal Disorders.
+    \item \textbf{Locomotion \& Movement} --- Muscle Ultrastructure (Actin, Myosin, Sarcomere); Sliding Filament Mechanism; Red vs White Fibres; Human Skeleton (206 Bones); Joints; Musculoskeletal Disorders.
+  \end{itemize}
+\end{itemize}
+\end{tcolorbox}
+
+\vspace{10pt}
+
+% =========================================================================
+% PART I: PHYSICS
+% =========================================================================
+\section{Physics: Core Principles, Mechanics \& Rotational Dynamics}
+
+\subsection{1. Laws of Motion}
+
+\subsubsection{Newton's Laws \& Momentum Conservation}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{First Law (Law of Inertia):} An object remains at rest or in uniform motion along a straight line unless acted upon by an external net force. Inertia depends directly on inertial mass.
+  \item \textbf{Second Law:} The time rate of change of linear momentum is directly proportional to the applied force:
+  \[
+    \vec{F}_{\text{net}} = \frac{d\vec{p}}{dt} = \frac{d(m\vec{v})}{dt} = m\vec{a} \quad (\text{for constant mass } m)
+  \]
+  \item \textbf{Third Law:} To every action, there is always an equal and opposite reaction ($\vec{F}_{AB} = -\vec{F}_{BA}$). Action and reaction act simultaneously on \textbf{two different bodies}, never cancelling each other out.
+  \item \textbf{Impulse ($\vec{I}$):} Product of average force and duration of action, equal to the net change in momentum:
+  \[
+    \vec{I} = \int_{t_1}^{t_2} \vec{F} \, dt = \vec{F}_{\text{avg}} \Delta t = \Delta \vec{p} = m(\vec{v} - \vec{u})
+  \]
+  \textit{Graphical representation:} The area bounded under the Force--Time ($F$--$t$) curve represents the total impulse $\vec{I}$.
+  \item \textbf{Conservation of Linear Momentum:} In an isolated system where external force is zero ($\vec{F}_{\text{ext}} = 0$):
+  \[
+    \sum \vec{p}_{\text{initial}} = \sum \vec{p}_{\text{final}} \implies m_1\vec{u}_1 + m_2\vec{u}_2 = m_1\vec{v}_1 + m_2\vec{v}_2
+  \]
+  \textit{Recoil Velocity of Gun:} $v_{\text{gun}} = -\frac{m_{\text{bullet}}}{M_{\text{gun}}} v_{\text{bullet}}$.
+\end{itemize}
+
+\subsubsection{Friction Dynamics}
+Friction is an electromagnetic contact force opposing relative impending or actual motion between contacting surfaces.
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Static Friction ($f_s$):} Self-adjusting force ($0 \le f_s \le f_{s,\text{max}}$).
+  \[
+    f_{s,\text{max}} = \mu_s N
+  \]
+  where $\mu_s$ is the coefficient of static friction, and $N$ is the normal contact force.
+  \item \textbf{Kinetic Friction ($f_k$):} Nearly independent of relative sliding velocity:
+  \[
+    f_k = \mu_k N \quad (\mu_k < \mu_s)
+  \]
+  \item \textbf{Angle of Friction ($\lambda$):} Angle between total contact force $\vec{R} = \vec{N} + \vec{f}_s$ and the normal $\vec{N}$:
+  \[
+    \tan \lambda = \frac{f_{s,\text{max}}}{N} = \mu_s \implies \lambda = \tan^{-1}(\mu_s)
+  \]
+  \item \textbf{Angle of Repose ($\theta$):} Minimum incline angle at which a body on an inclined plane begins to slide down:
+  \[
+    mg \sin\theta = \mu_s mg \cos\theta \implies \tan \theta = \mu_s \implies \theta = \lambda
+  \]
+\end{itemize}
+
+\begin{formulabox}[Connected Systems \& Elevator Dynamics]
+\textbf{1. Apparent Weight in an Elevator of mass $m$:}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+  \item Upward acceleration $+a$: $N = m(g + a)$ (Heavier sensation)
+  \item Downward acceleration $-a$: $N = m(g - a)$ (Lighter sensation)
+  \item Free fall ($a = g$): $N = m(g - g) = 0$ (Weightlessness)
+\end{itemize}
+
+\textbf{2. Atwood Machine (Two masses $m_2 > m_1$ over a frictionless light pulley):}
+\[
+  a = \frac{m_2 - m_1}{m_1 + m_2} g, \qquad T = \frac{2 m_1 m_2}{m_1 + m_2} g
+\]
+\end{formulabox}
+
+\subsubsection{Circular Motion Dynamics \& Banking of Curves}
+When a body negotiates a curved path of radius $r$ at speed $v$, centripetal acceleration $a_c = \frac{v^2}{r}$ is required.
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+  \item \textbf{Level Unbanked Road:} Centripetal force supplied entirely by static friction:
+  \[
+    \frac{m v^2}{r} \le \mu_s N = \mu_s mg \implies v_{\text{max}} = \sqrt{\mu_s g r}
+  \]
+  \item \textbf{Banked Road without Friction (Optimum / Design Speed $v_0$):}
+  \[
+    N \sin\theta = \frac{m v_0^2}{r}, \quad N \cos\theta = mg \implies \tan \theta = \frac{v_0^2}{r g} \implies v_0 = \sqrt{r g \tan\theta}
+  \]
+  \item \textbf{Banked Road with Friction ($\mu_s$):}
+  \[
+    v_{\text{max}} = \sqrt{r g \left(\frac{\mu_s + \tan\theta}{1 - \mu_s \tan\theta}\right)}, \qquad v_{\text{min}} = \sqrt{r g \left(\frac{\tan\theta - \mu_s}{1 + \mu_s \tan\theta}\right)}
+  \]
+  \item \textbf{Bending of a Cyclist:} $\tan\theta = \frac{v^2}{rg}$ (measured from vertical).
+\end{itemize}
+
+\subsection{2. Work, Energy and Power}
+
+\subsubsection{Work Done \& Work-Energy Theorem}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Constant Force:} $W = \vec{F} \cdot \vec{s} = F s \cos\theta$.
+  \item \textbf{Variable Force in 1D:} $W = \int_{x_i}^{x_f} F(x) \, dx$ (Area under the $F$--$x$ curve).
+  \item \textbf{Work-Energy Theorem:} The total work done by all forces (conservative, non-conservative, and pseudo) equals the net change in kinetic energy:
+  \[
+    W_{\text{net}} = W_{\text{conservative}} + W_{\text{non-conservative}} + W_{\text{pseudo}} = \Delta K = K_f - K_i = \frac{1}{2}m v_f^2 - \frac{1}{2}m v_i^2
+  \]
+\end{itemize}
+
+\subsubsection{Conservative Forces \& Potential Energy ($U$)}
+Potential energy is defined strictly for conservative forces where work is path-independent:
+\[
+  F = -\frac{dU}{dx} \quad \left(\text{in 3D: } \vec{F} = -\nabla U = -\left[\frac{\partial U}{\partial x}\hat{i} + \frac{\partial U}{\partial y}\hat{j} + \frac{\partial U}{\partial z}\hat{k}\right]\right)
+\]
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Gravitational PE:} $U(h) = mgh$ (for $h \ll R_{\text{Earth}}$).
+  \item \textbf{Spring PE:} Restoring force $F = -kx \implies U = \frac{1}{2} k x^2$.
+  \item \textbf{Equilibrium States:}
+  \begin{itemize}[label=$\circ$]
+    \item Stable Equilibrium: $\frac{dU}{dx} = 0$, $\frac{d^2U}{dx^2} > 0$ (Potential energy is minimum).
+    \item Unstable Equilibrium: $\frac{dU}{dx} = 0$, $\frac{d^2U}{dx^2} < 0$ (Potential energy is maximum).
+    \item Neutral Equilibrium: $\frac{dU}{dx} = 0$, $\frac{d^2U}{dx^2} = 0$ ($U$ remains constant).
+  \end{itemize}
+\end{itemize}
+
+\begin{formulabox}[Vertical Circular Motion (String of Length $R$)]
+For a particle of mass $m$ tied to a massless string of length $R$:
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+  \item Critical speed at bottom point ($L$): $v_L \ge \sqrt{5gR}$ (Minimum for complete loop).
+  \item Critical speed at highest point ($H$): $v_H \ge \sqrt{gR}$ (String just stays taut, $T_H = 0$).
+  \item Speed at horizontal point ($M$): $v_M \ge \sqrt{3gR}$.
+  \item Tension difference between bottom and top: $T_L - T_H = 6mg$ (Constant for any looping speed).
+\end{itemize}
+\end{formulabox}
+
+\subsubsection{Collisions in One Dimension}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Coefficient of Restitution ($e$):}
+  \[
+    e = \frac{\text{Velocity of Separation}}{\text{Velocity of Approach}} = \frac{v_2 - v_1}{u_1 - u_2}
+  \]
+  \begin{itemize}[label=$\circ$]
+    \item Perfectly Elastic Collision: $e = 1$ (Momentum \& Kinetic Energy conserved).
+    \item Inelastic Collision: $0 < e < 1$ (Momentum conserved, Kinetic Energy lost).
+    \item Perfectly Inelastic Collision: $e = 0$ (Bodies stick together, max KE loss).
+  \end{itemize}
+  \item \textbf{Elastic Head-on Collision Velocities ($e = 1$):}
+  \[
+    v_1 = \left(\frac{m_1 - m_2}{m_1 + m_2}\right)u_1 + \left(\frac{2 m_2}{m_1 + m_2}\right)u_2, \qquad v_2 = \left(\frac{2 m_1}{m_1 + m_2}\right)u_1 + \left(\frac{m_2 - m_1}{m_1 + m_2}\right)u_2
+  \]
+  \textit{Special Case ($m_1 = m_2$):} Velocities are completely exchanged ($v_1 = u_2, v_2 = u_1$).
+  \item \textbf{Loss of Kinetic Energy in Inelastic Collision ($0 \le e \le 1$):}
+  \[
+    \Delta K = \frac{1}{2} \left(\frac{m_1 m_2}{m_1 + m_2}\right) (u_1 - u_2)^2 (1 - e^2)
+  \]
+\end{itemize}
+
+\subsection{3. Centre of Mass and System of Particles}
+
+\subsubsection{Centre of Mass (CM) Coordinates}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Discrete System:} $\vec{r}_{\text{cm}} = \frac{\sum m_i \vec{r}_i}{\sum m_i} = \frac{m_1\vec{r}_1 + m_2\vec{r}_2 + \dots}{M}$.
+  \item \textbf{Two-Particle System:} Distance of CM from $m_1$ on separation line $r$: $r_1 = \left(\frac{m_2}{m_1 + m_2}\right) r$.
+  \item \textbf{Continuous Mass Distribution:} $\vec{r}_{\text{cm}} = \frac{1}{M} \int \vec{r} \, dm$.
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l X l}
+\toprule
+\textbf{Rigid Body Geometry} & \textbf{Symmetry Axis / Reference} & \textbf{CM Location Coordinate ($y_{\text{cm}}$)} \\
+\midrule
+Uniform Semicircular Ring & Along symmetry axis from centre & $y_{\text{cm}} = \frac{2R}{\pi} \approx 0.637 R$ \\
+Uniform Semicircular Disc & Along symmetry axis from centre & $y_{\text{cm}} = \frac{4R}{3\pi} \approx 0.424 R$ \\
+Uniform Hemispherical Shell & Along central radius from base & $y_{\text{cm}} = \frac{R}{2} = 0.5 R$ \\
+Uniform Solid Hemisphere & Along central radius from base & $y_{\text{cm}} = \frac{3R}{8} = 0.375 R$ \\
+Uniform Hollow Right Cone & Along altitude from base & $y_{\text{cm}} = \frac{h}{3}$ \\
+Uniform Solid Right Cone & Along altitude from base & $y_{\text{cm}} = \frac{h}{4}$ \\
+\bottomrule
+\end{tabularx}
+\caption{Coordinates of Centre of Mass for Standard Symmetrical Bodies}
+\end{table}
+
+\subsubsection{Rotational Kinematics \& Dynamics}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Torque ($\vec{\tau}$):} $\vec{\tau} = \vec{r} \times \vec{F} = I \vec{\alpha} = \frac{d\vec{L}}{dt}$.
+  \item \textbf{Angular Momentum ($\vec{L}$):} $\vec{L} = \vec{r} \times \vec{p} = I \vec{\omega}$.
+  \item \textbf{Law of Conservation of Angular Momentum:} If $\vec{\tau}_{\text{ext}} = 0 \implies \vec{L} = \text{constant} \implies I_1 \omega_1 = I_2 \omega_2$.
+  \item \textbf{Moment of Inertia Theorems:}
+  \begin{itemize}[label=$\circ$]
+    \item Parallel Axis Theorem: $I = I_{\text{cm}} + M d^2$ (Applicable to any 3D rigid body).
+    \item Perpendicular Axis Theorem: $I_z = I_x + I_y$ (\textbf{Only} valid for 2D laminar planar bodies).
+  \end{itemize}
+\end{itemize}
+
+\begin{formulabox}[Moments of Inertia ($I$) of Standard Bodies]
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+  \item Thin Circular Ring (axis perpendicular through centre): $I = MR^2$; along diameter: $I = \frac{1}{2}MR^2$.
+  \item Uniform Circular Disc (perpendicular through centre): $I = \frac{1}{2}MR^2$; along diameter: $I = \frac{1}{4}MR^2$.
+  \item Solid Sphere (about any diameter): $I = \frac{2}{5}MR^2$; tangent: $I = \frac{7}{5}MR^2$.
+  \item Hollow Sphere / Thin Spherical Shell: $I = \frac{2}{3}MR^2$; tangent: $I = \frac{5}{3}MR^2$.
+  \item Thin Uniform Rod of length $L$ (perpendicular through centre): $I = \frac{1}{12}ML^2$; through end: $I = \frac{1}{3}ML^2$.
+\end{itemize}
+\end{formulabox}
+
+\subsubsection{Pure Rolling Motion on an Incline}
+For a body of mass $M$, radius $R$, and radius of gyration $k$ rolling without slipping ($v_{\text{cm}} = R\omega$):
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Total Kinetic Energy:}
+  \[
+    K_{\text{total}} = K_{\text{trans}} + K_{\text{rot}} = \frac{1}{2} M v_{\text{cm}}^2 + \frac{1}{2} I \omega^2 = \frac{1}{2} M v_{\text{cm}}^2 \left(1 + \frac{k^2}{R^2}\right)
+  \]
+  \item \textbf{Linear Acceleration Down an Incline ($\theta$):}
+  \[
+    a = \frac{g \sin\theta}{1 + \frac{k^2}{R^2}}, \qquad v_{\text{bottom}} = \sqrt{\frac{2gh}{1 + \frac{k^2}{R^2}}}
+  \]
+  \item \textbf{Order of Acceleration / Speed ($a \propto \frac{1}{1 + k^2/R^2}$):}
+  Solid Sphere ($\frac{k^2}{R^2} = 0.4$) $>$ Disc ($\frac{k^2}{R^2} = 0.5$) $>$ Hollow Sphere ($\frac{k^2}{R^2} = 0.67$) $>$ Ring ($\frac{k^2}{R^2} = 1.0$).
+\end{itemize}
+
+\vspace{10pt}
+
+% =========================================================================
+% PART II: CHEMISTRY
+% =========================================================================
+\section{Chemistry: Physical Principles, Kinetics \& Atomic Structure}
+
+\subsection{4. Electrochemistry}
+
+\subsubsection{Galvanic Cells \& Nernst Equation}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Standard EMF of Cell:} $E^\circ_{\text{cell}} = E^\circ_{\text{cathode (reduction)}} - E^\circ_{\text{anode (reduction)}}$.
+  \item \textbf{Standard Hydrogen Electrode (SHE):} $\text{Pt}(s) \mid \text{H}_2(g, 1\text{ bar}) \mid \text{H}^+(aq, 1\text{ M})$, by convention assigned $E^\circ = 0.00\text{ V}$.
+  \item \textbf{General Nernst Equation (at $298\text{ K}$ / $25^\circ\text{C}$):}
+  \[
+    E_{\text{cell}} = E^\circ_{\text{cell}} - \frac{2.303 RT}{n F} \log_{10} Q = E^\circ_{\text{cell}} - \frac{0.0591}{n} \log_{10} Q
+  \]
+  where $n$ is moles of electrons transferred, and $Q$ is the reaction quotient.
+  \item \textbf{Equilibrium State ($E_{\text{cell}} = 0$, $Q = K_c$):}
+  \[
+    E^\circ_{\text{cell}} = \frac{0.0591}{n} \log_{10} K_c \implies \log_{10} K_c = \frac{n E^\circ_{\text{cell}}}{0.0591}
+  \]
+  \item \textbf{Gibbs Free Energy \& Work:}
+  \[
+    \Delta G = -n F E_{\text{cell}}, \qquad \Delta G^\circ = -n F E^\circ_{\text{cell}} = -2.303 RT \log_{10} K_c
+  \]
+  \textit{Criterion for spontaneity:} $E_{\text{cell}} > 0 \iff \Delta G < 0$.
+\end{itemize}
+
+\subsubsection{Conductance \& Electrolytic Conduction}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Conductivity (Specific Conductance, $\kappa$):} Inverse of resistivity ($\rho$):
+  \[
+    \kappa = \frac{1}{\rho} = \frac{1}{R} \left(\frac{l}{A}\right) = G \cdot G^*
+  \]
+  where $G = \frac{1}{R}$ is conductance (Siemens, S), and $G^* = \frac{l}{A}$ is the \textbf{Cell Constant} ($\text{cm}^{-1}$ or $\text{m}^{-1}$).
+  \item \textbf{Molar Conductivity ($\Lambda_m$):}
+  \[
+    \Lambda_m = \frac{\kappa \times 1000}{M} \quad (\text{Units: } \text{S cm}^2 \text{ mol}^{-1}, \text{ with } \kappa \text{ in S cm}^{-1}, M \text{ in molarity})
+  \]
+  \item \textbf{Dilution Behavior:}
+  \begin{itemize}[label=$\circ$]
+    \item Conductivity ($\kappa$) \textbf{decreases} upon dilution because the number of conducting ions per unit volume decreases.
+    \item Molar conductivity ($\Lambda_m$) \textbf{increases} upon dilution for both strong and weak electrolytes (due to increased volume containing 1 mole of electrolyte).
+  \end{itemize}
+  \item \textbf{Debye-Hückel-Onsager Equation (Strong Electrolytes):} $\Lambda_m = \Lambda^\circ_m - A \sqrt{c}$.
+\end{itemize}
+
+\begin{formulabox}[Kohlrausch's Law of Independent Migration of Ions]
+At infinite dilution ($c \to 0$), the limiting molar conductivity of an electrolyte is the sum of individual contributions of anions and cations:
+\[
+  \Lambda^\circ_m = \nu_+ \lambda^\circ_+ + \nu_- \lambda^\circ_-
+\]
+\textbf{Key Applications:}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+  \item Limiting molar conductivity of weak electrolyte (e.g., $\text{CH}_3\text{COOH}$):
+  \[
+    \Lambda^\circ_m(\text{CH}_3\text{COOH}) = \Lambda^\circ_m(\text{CH}_3\text{COONa}) + \Lambda^\circ_m(\text{HCl}) - \Lambda^\circ_m(\text{NaCl})
+  \]
+  \item Degree of Dissociation ($\alpha$): $\alpha = \frac{\Lambda_m}{\Lambda^\circ_m}$.
+  \item Dissociation Constant ($K_a$): $K_a = \frac{c \alpha^2}{1 - \alpha} = \frac{c \Lambda_m^2}{\Lambda^\circ_m (\Lambda^\circ_m - \Lambda_m)}$.
+\end{itemize}
+\end{formulabox}
+
+\subsubsection{Faraday's Laws of Electrolysis}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{First Law:} Mass deposited $m \propto Q \implies m = Z Q = Z I t$, where $Z = \frac{E}{96500} = \frac{M}{n \cdot 96500}$.
+  \item \textbf{Second Law:} For identical charge passed through series cells: $\frac{m_1}{m_2} = \frac{E_1}{E_2}$.
+  \item $1\text{ Faraday} = 96487 \approx 96500\text{ C mol}^{-1}$ = Charge on 1 mole of electrons ($N_A \cdot e$).
+\end{itemize}
+
+\subsubsection{Commercial Cells \& Batteries}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Primary Cells:} Reaction cannot be reversed.
+  \begin{itemize}[label=$\circ$]
+    \item \textit{Leclanché Dry Cell:} Anode: Zn cylinder; Cathode: Graphite rod surrounded by $\text{MnO}_2 + \text{C}$; Electrolyte: $\text{NH}_4\text{Cl} + \text{ZnCl}_2$ paste. Potential $\approx 1.5\text{ V}$.
+    \item \textit{Mercury Cell:} Anode: Zn--Hg amalgam; Cathode: $\text{HgO} + \text{C}$; Electrolyte: $\text{KOH} + \text{ZnO}$. Generates constant voltage $1.35\text{ V}$ throughout its life (overall reaction has no ions in solution).
+  \end{itemize}
+  \item \textbf{Secondary Cells:} Reversible reactions upon recharging.
+  \begin{itemize}[label=$\circ$]
+    \item \textit{Lead Storage Battery:} Anode: Spongy Pb; Cathode: $\text{PbO}_2$; Electrolyte: $38\% \text{ H}_2\text{SO}_4$ ($\text{density} = 1.30\text{ g/mL}$).
+    \[
+      \text{Discharging: } \text{Pb}(s) + \text{PbO}_2(s) + 2\text{H}_2\text{SO}_4(aq) \xrightarrow{} 2\text{PbSO}_4(s) + 2\text{H}_2\text{O}(l)
+    \]
+    During recharging, the electrical polarity is reversed, regenerating $\text{Pb}$, $\text{PbO}_2$, and $\text{H}_2\text{SO}_4$.
+  \end{itemize}
+  \item \textbf{Fuel Cells ($H_2$--$O_2$):} Direct conversion of chemical energy of combustion into electricity. Efficiency $\approx 70\%$, eco-friendly with pure water as byproduct.
+  \item \textbf{Corrosion:} Electrochemical mechanism. Anode: $\text{Fe}(s) \to \text{Fe}^{2+} + 2e^-$; Cathode: $\text{O}_2 + 4\text{H}^+ + 4e^- \to 2\text{H}_2\text{O}$; Rust: $\text{Fe}_2\text{O}_3 \cdot x\text{H}_2\text{O}$.
+\end{itemize}
+
+\subsection{5. Chemical Kinetics}
+
+\subsubsection{Rate of Reaction \& Rate Law}
+For reaction $aA + bB \to cC + dD$:
+\[
+  \text{Rate} = -\frac{1}{a}\frac{d[A]}{dt} = -\frac{1}{b}\frac{d[B]}{dt} = +\frac{1}{c}\frac{d[C]}{dt} = +\frac{1}{d}\frac{d[D]}{dt}
+\]
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Differential Rate Law:} $\text{Rate} = k [A]^x [B]^y$ (Overall order $n = x + y$).
+  \item \textbf{Units of Rate Constant $k$:} $\text{mol}^{1-n} \text{ L}^{n-1} \text{ s}^{-1}$ ($n = \text{overall reaction order}$).
+  \item \textbf{Order vs Molecularity:}
+  \begin{itemize}[label=$\circ$]
+    \item Order is experimental, can be zero, fractional, or negative; applies to both elementary and complex reactions.
+    \item Molecularity is theoretical (number of colliding species in an elementary step), strictly an integer ($1, 2, 3$), never zero or fractional, meaningless for complex overall reactions.
+  \end{itemize}
+\end{itemize}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l X X X}
+\toprule
+\textbf{Parameter} & \textbf{Zero-Order Reaction ($n=0$)} & \textbf{First-Order Reaction ($n=1$)} & \textbf{Second-Order Reaction ($n=2$)} \\
+\midrule
+Differential Rate & $-\frac{d[A]}{dt} = k$ & $-\frac{d[A]}{dt} = k[A]$ & $-\frac{d[A]}{dt} = k[A]^2$ \\
+Integrated Equation & $[A]_t = [A]_0 - kt$ & $[A]_t = [A]_0 e^{-kt} \iff k = \frac{2.303}{t}\log\frac{[A]_0}{[A]_t}$ & $\frac{1}{[A]_t} = \frac{1}{[A]_0} + kt$ \\
+Linear Plot & $[A]_t \text{ vs } t$ (Slope: $-k$) & $\log[A]_t \text{ vs } t$ (Slope: $-\frac{k}{2.303}$) & $\frac{1}{[A]_t} \text{ vs } t$ (Slope: $+k$) \\
+Half-Life ($t_{1/2}$) & $t_{1/2} = \frac{[A]_0}{2k} \propto [A]_0$ & $t_{1/2} = \frac{0.693}{k}$ (\textbf{Independent} of $[A]_0$) & $t_{1/2} = \frac{1}{k[A]_0} \propto \frac{1}{[A]_0}$ \\
+Completion Time & $t_{100\%} = \frac{[A]_0}{k} = 2 t_{1/2}$ & $t_{100\%} \to \infty$ (Never 100\% complete) & $t_{100\%} \to \infty$ \\
+Units of $k$ & $\text{mol L}^{-1} \text{ s}^{-1}$ & $\text{s}^{-1}$ & $\text{L mol}^{-1} \text{ s}^{-1}$ \\
+\bottomrule
+\end{tabularx}
+\caption{Comparison of Kinetic Parameters across Reaction Orders}
+\end{table}
+
+\begin{examtip}[High-Yield First-Order Proportionality Shortcuts]
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+  \item $t_{75\%} = 2 \times t_{1/2}$
+  \item $t_{87.5\%} = 3 \times t_{1/2}$
+  \item $t_{93.75\%} = 4 \times t_{1/2}$
+  \item $t_{99\%} \approx \frac{2}{0.301} t_{1/2} \approx 6.64 \times t_{1/2}$
+  \item $t_{99.9\%} \approx 10 \times t_{1/2}$
+  \item Radioactive decay always follows \textbf{first-order kinetics}: $N_t = N_0 \left(\frac{1}{2}\right)^n$, where $n = \frac{t}{t_{1/2}}$.
+\end{itemize}
+\end{examtip}
+
+\subsubsection{Temperature Dependence \& Arrhenius Equation}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Arrhenius Equation:} $k = A e^{-E_a / RT}$, where $A$ is the pre-exponential / frequency factor, and $E_a$ is the activation energy.
+  \item \textbf{Logarithmic Formulation:}
+  \[
+    \ln k = \ln A - \frac{E_a}{RT} \iff \log_{10} k = \log_{10} A - \frac{E_a}{2.303 RT}
+  \]
+  A plot of $\log_{10} k$ versus $\frac{1}{T}$ yields a straight line with $\text{Slope} = -\frac{E_a}{2.303 R}$ and $y\text{-intercept} = \log_{10} A$.
+  \item \textbf{Two Temperatures Equation:}
+  \[
+    \log_{10} \left(\frac{k_2}{k_1}\right) = \frac{E_a}{2.303 R} \left(\frac{T_2 - T_1}{T_1 T_2}\right)
+  \]
+  \item \textbf{Temperature Coefficient:} $\frac{k_{T+10}}{k_T} \approx 2 \text{ to } 3$ for most chemical reactions.
+  \item \textbf{Collision Theory:} $\text{Rate} = Z_{AB} \cdot P \cdot e^{-E_a / RT}$, where $Z_{AB}$ is collision frequency, and $P$ is the steric / orientation factor.
+  \item \textbf{Role of Catalyst:} A catalyst accelerates a reaction by providing an alternative pathway with a \textbf{lower activation energy} ($E_a$). It does \textbf{not} alter $\Delta H$, $\Delta G$, or the equilibrium constant ($K_{\text{eq}}$).
+\end{itemize}
+
+\subsection{6. Structure of Atom}
+
+\subsubsection{Bohr's Atomic Model (Single-Electron Species: $\text{H}, \text{He}^+, \text{Li}^{2+}$)}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Bohr's Quantization Condition:} Angular momentum is quantized in integer multiples of $\hbar$:
+  \[
+    m v r = \frac{n h}{2\pi} = n\hbar \quad (n = 1, 2, 3, \dots)
+  \]
+  \item \textbf{Radius of $n^{\text{th}}$ Orbit:}
+  \[
+    r_n = \frac{n^2 h^2 \varepsilon_0}{\pi m Z e^2} = 0.529 \frac{n^2}{Z} \, \text{\AA} = 52.9 \frac{n^2}{Z} \, \text{pm}
+  \]
+  \item \textbf{Velocity of Electron in $n^{\text{th}}$ Orbit:}
+  \[
+    v_n = \frac{Z e^2}{2 \varepsilon_0 n h} = 2.18 \times 10^6 \frac{Z}{n} \, \text{m/s}
+  \]
+  \item \textbf{Total Energy of Electron:}
+  \[
+    E_n = -13.6 \frac{Z^2}{n^2} \, \text{eV/atom} = -2.18 \times 10^{-18} \frac{Z^2}{n^2} \, \text{J/atom}
+  \]
+  \item \textbf{Energy Relations:}
+  \[
+    K = -E_n = +13.6 \frac{Z^2}{n^2} \, \text{eV}, \qquad U = 2 E_n = -27.2 \frac{Z^2}{n^2} \, \text{eV}
+  \]
+\end{itemize}
+
+\subsubsection{Rydberg Formula \& Hydrogen Emission Spectrum}
+When an electron de-excites from higher level $n_2$ to lower level $n_1$, a photon of wavelength $\lambda$ is emitted:
+\[
+  \bar{\nu} = \frac{1}{\lambda} = R_H Z^2 \left(\frac{1}{n_1^2} - \frac{1}{n_2^2}\right) \quad (R_H = 109,677 \, \text{cm}^{-1} \approx 1.097 \times 10^7 \, \text{m}^{-1})
+\]
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Lyman Series:} $n_1 = 1, n_2 = 2, 3, 4, \dots$ $\to$ \textbf{Ultraviolet (UV)} region.
+  \item \textbf{Balmer Series:} $n_1 = 2, n_2 = 3, 4, 5, \dots$ $\to$ \textbf{Visible} region ($H_\alpha = 656\text{ nm}$, red).
+  \item \textbf{Paschen Series:} $n_1 = 3, n_2 = 4, 5, \dots$ $\to$ \textbf{Near Infrared (IR)} region.
+  \item \textbf{Brackett Series:} $n_1 = 4, n_2 = 5, 6, \dots$ $\to$ \textbf{Infrared (IR)} region.
+  \item \textbf{Pfund Series:} $n_1 = 5, n_2 = 6, 7, \dots$ $\to$ \textbf{Far Infrared} region.
+  \item \textbf{Humphrey Series:} $n_1 = 6, n_2 = 7, 8, \dots$ $\to$ \textbf{Far Infrared} region.
+  \item \textbf{Total Possible Spectral Lines from $n^{\text{th}}$ Excited State to Ground State:}
+  \[
+    N = \frac{n(n-1)}{2}; \qquad \text{Between $n_2$ and $n_1$:} \quad N = \frac{(n_2 - n_1)(n_2 - n_1 + 1)}{2}
+  \]
+\end{itemize}
+
+\subsubsection{Dual Nature of Matter \& Quantum Mechanics}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{de Broglie Wavelength:}
+  \[
+    \lambda = \frac{h}{p} = \frac{h}{m v} = \frac{h}{\sqrt{2m K}} = \frac{h}{\sqrt{2mqV}}
+  \]
+  For an electron accelerated through potential difference $V$ volts:
+  \[
+    \lambda_e = \frac{12.27}{\sqrt{V}} \, \text{\AA} = \sqrt{\frac{150}{V}} \, \text{\AA}
+  \]
+  \item \textbf{Heisenberg's Uncertainty Principle:}
+  \[
+    \Delta x \cdot \Delta p \ge \frac{h}{4\pi} \implies \Delta x \cdot (m \Delta v) \ge \frac{h}{4\pi} \implies \Delta E \cdot \Delta t \ge \frac{h}{4\pi}
+  \]
+\end{itemize}
+
+\subsubsection{Quantum Numbers \& Electronic Configuration Rules}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Principal Quantum Number ($n = 1, 2, 3, \dots$):} Determines main shell size, energy, and max electrons ($2n^2$).
+  \item \textbf{Azimuthal Quantum Number ($l = 0 \text{ to } n-1$):} Subshell shape ($s:0, p:1, d:2, f:3$). Orbital angular momentum:
+  \[
+    L = \sqrt{l(l+1)} \frac{h}{2\pi} = \sqrt{l(l+1)} \hbar \quad (\text{For $s$-orbital, } l = 0 \implies L = 0)
+  \]
+  \item \textbf{Magnetic Quantum Number ($m_l = -l \text{ to } +l$):} Spatial orientation; total orbitals in subshell $= 2l + 1$.
+  \item \textbf{Spin Quantum Number ($m_s = +\frac{1}{2}, -\frac{1}{2}$):} Spin direction. Spin magnetic moment:
+  \[
+    \mu_s = \sqrt{n(n+2)} \, \text{BM} \quad (\text{Bohr Magneton}, n = \text{number of unpaired electrons})
+  \]
+  \item \textbf{Nodes in Orbitals:}
+  Radial nodes $= n - l - 1$; Angular nodes $= l$; Total nodes $= n - 1$.
+  \item \textbf{Aufbau Principle:} Orbitals filled in increasing order of $(n + l)$ energy. If $(n + l)$ identical, lower $n$ filled first.
+  \item \textbf{Pauli's Exclusion Principle:} No two electrons in an atom can have the exact same set of all four quantum numbers.
+  \item \textbf{Hund's Rule of Maximum Multiplicity:} Pairing in degenerate orbitals occurs only after each orbital is singly occupied with parallel spin.
+\end{itemize}
+
+\vspace{10pt}
+
+% =========================================================================
+% PART III: BIOLOGY (BOTANY)
+% =========================================================================
+\section{Biology --- Botany: Plant Diversity \& Floral Architecture}
+
+\subsection{7. Plant Kingdom}
+
+\subsubsection{Classification Systems}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Artificial Systems:} Based only on gross superficial morphological characters (habit, colour, number, shape of leaves, androecium structure; Linnaeus).
+  \item \textbf{Natural Systems:} Based on natural affinities among organisms, considering internal features like ultrastructure, anatomy, embryology, and phytochemistry (George Bentham \& Joseph Dalton Hooker).
+  \item \textbf{Phylogenetic Systems:} Based on evolutionary relationships; organisms in the same taxa share a common ancestor (Engler \& Prantl, Hutchinson).
+  \item \textbf{Modern Taxonomical Aids:} Numerical taxonomy (computers, equal weightage to all characters), Cytotaxonomy (chromosome number, structure, behavior), Chemotaxonomy (chemical constituents).
+\end{itemize}
+
+\subsubsection{Algae Division Breakdown}
+\begin{table}[h]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l X X X}
+\toprule
+\textbf{Feature} & \textbf{Chlorophyceae (Green)} & \textbf{Phaeophyceae (Brown)} & \textbf{Rhodophyceae (Red)} \\
+\midrule
+Major Pigments & Chlorophyll $a$, $b$ & Chlorophyll $a$, $c$, Fucoxanthin & Chlorophyll $a$, $d$, $r$-Phycoerythrin \\
+Stored Food & Starch (in pyrenoids) & Laminarin and Mannitol & Floridean starch (like amylopectin) \\
+Cell Wall & Cellulose (inner) + Pectose (outer) & Cellulose + gelatinous Algin & Cellulose, Pectin, Polysulphate esters \\
+Flagella & 2--8, equal, apical & 2, unequal, lateral & \textbf{Absent} in all stages (non-motile) \\
+Habitat & Fresh water, brackish, salt water & Mostly marine (rare fresh water) & Mostly marine, warm coastal waters \\
+Examples & \textit{Chlamydomonas}, \textit{Volvox}, \textit{Ulothrix}, \textit{Spirogyra}, \textit{Chara} & \textit{Ectocarpus}, \textit{Dictyota}, \textit{Laminaria}, \textit{Sargassum}, \textit{Fucus} & \textit{Polysiphonia}, \textit{Porphyra}, \textit{Gracilaria}, \textit{Gelidium} (Agar) \\
+\bottomrule
+\end{tabularx}
+\caption{Comparative Overview of Algal Classes (NCERT Canonical)}
+\end{table}
+
+\subsubsection{Bryophytes (Amphibians of the Plant Kingdom)}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item Live in soil but \textbf{depend on water for sexual reproduction} (ciliated male antherozoids swim to archegonium).
+  \item \textbf{Plant Body:} Thalloid, attached by unicellular or multicellular rhizoids. Lacks true roots, stems, and leaves.
+  \item \textbf{Dominant Phase:} Free-living, photosynthetic, haploid \textbf{Gametophyte} ($n$).
+  \item \textbf{Sporophyte ($2n$):} Differentiated into foot, seta, and capsule. Not free-living; permanently attached to and nutritionally dependent on the gametophyte.
+  \item \textbf{Liverworts:} E.g., \textit{Marchantia}. Dorsiventral thallus; asexual reproduction via \textbf{gemma cups} containing multicellular green buds called \textbf{gemmae}. Dioecious (male antheridiophore, female archegoniophore).
+  \item \textbf{Mosses:} Two distinct developmental stages:
+  \begin{itemize}[label=$\circ$]
+    \item \textit{Protonema Stage:} Creeping, green, branched, filamentous directly from spore.
+    \item \textit{Leafy Stage:} Arises as lateral bud from secondary protonema; has spirally arranged leaves.
+    \item Capsule possesses \textbf{peristome teeth} mechanism for regulated spore dispersal.
+    \item Examples: \textit{Funaria}, \textit{Polytrichum}, \textit{Sphagnum} (Peat moss: used as packing material for transshipment of living organisms due to high water-holding capacity; fuel source).
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Pteridophytes (First Vascular Land Plants)}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item Possess xylem (tracheids, lack vessels) and phloem (sieve cells, lack companion cells).
+  \item \textbf{Dominant Phase:} Independent diploid \textbf{Sporophyte} ($2n$) with true roots, stem, and leaves.
+  \item Leaves may be small microphylls (\textit{Selaginella}) or large macrophylls (Ferns).
+  \item Sporangia subtended by leaf-like appendages called \textbf{sporophylls}, forming cones/strobili (\textit{Selaginella}, \textit{Equisetum}).
+  \item Spores germinate into \textbf{Prothallus} (inconspicuous, small, multicellular, green, free-living haploid gametophyte requiring cool, damp conditions).
+  \item \textbf{Heterospory \& Seed Habit Precursor:} Most pteridophytes are homosporous. \textbf{\textit{Selaginella}} and \textbf{\textit{Salvinia}} are heterosporous (produce microspores and megaspores). Megaspore retention within parent sporophyte and development of female gametophyte on sporophyte represents a pivotal evolutionary step toward the \textbf{seed habit}.
+  \item Classes: Psilopsida (\textit{Psilotum}), Lycopsida (\textit{Selaginella}, \textit{Lycopodium}), Sphenopsida (\textit{Equisetum}), Pteropsida (\textit{Dryopteris}, \textit{Pteris}, \textit{Adiantum}).
+\end{itemize}
+
+\subsubsection{Gymnosperms \& Angiosperms}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Gymnosperms (Naked Seeds):} Ovules are not enclosed by any ovary wall and remain exposed both before and after fertilization. Seeds lack fruit covering.
+  \begin{itemize}[label=$\circ$]
+    \item \textit{Pinus:} Monoecious; branched stem; mycorrhizal symbiotic roots; winged pollen; needle-like leaves with sunken stomata and thick cuticle.
+    \item \textit{Cycas:} Dioecious; unbranched stem; coralloid roots with nitrogen-fixing cyanobacteria (\textit{Anabaena}, \textit{Nostoc}); motile ciliated male gametes.
+    \item Endosperm is \textbf{haploid ($n$)} and formed \textbf{before fertilization}.
+  \end{itemize}
+  \item \textbf{Angiosperms:} Ovules enclosed within ovary; seeds enclosed inside fruit.
+  \item \textbf{Double Fertilization (Unique to Angiosperms):}
+  \[
+    \text{Syngamy: } \text{Egg } (n) + \text{Male Gamete } (n) \xrightarrow{} \text{Zygote } (2n)
+  \]
+  \[
+    \text{Triple Fusion: } \text{Polar Nuclei } (2n) + \text{Male Gamete } (n) \xrightarrow{} \text{Primary Endosperm Nucleus (PEN) } (3n)
+  \]
+\end{itemize}
+
+\begin{biobox}[Plant Life Cycle Patterns]
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+  \item \textbf{Haplontic:} Gametophyte ($n$) dominant; sporophyte represented only by single-celled zygote ($2n$) which undergoes meiosis. Examples: \textit{Volvox}, \textit{Spirogyra}, \textit{Chlamydomonas}.
+  \item \textbf{Diplontic:} Sporophyte ($2n$) dominant, photosynthetic, independent; gametophyte reduced to few cells. Examples: All Gymnosperms, Angiosperms, and the brown alga \textit{Fucus}.
+  \item \textbf{Haplodiplontic:} Both phases multicellular and intermediate. Examples: Bryophytes, Pteridophytes, and algae \textit{Ectocarpus}, \textit{Polysiphonia}, Kelps.
+\end{itemize}
+\end{biobox}
+
+\subsection{8. Morphology of Flowering Plants}
+
+\subsubsection{Root Modifications}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Regions of Root Tip:} Root cap $\to$ Meristematic zone (rapid mitosis) $\to$ Elongation zone (responsible for root growth in length) $\to$ Maturation zone (bears root hairs).
+  \item \textbf{Storage Roots:} Tap roots in Carrot, Turnip, Beetroot; Adventitious roots in Sweet potato (\textit{Ipomoea batatas}).
+  \item \textbf{Prop Roots (Pillar-like support):} Arise from horizontal branches of Banyan (\textit{Ficus benghalensis}).
+  \item \textbf{Stilt Roots:} Arise from lower nodes of stem for support in Maize and Sugarcane.
+  \item \textbf{Pneumatophores (Respiratory roots):} Grow vertically upward from swampy soil in halophytes like \textit{Rhizophora} to obtain oxygen.
+\end{itemize}
+
+\subsubsection{Stem Modifications}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Underground Food Storage \& Perennation:} Rhizome (Ginger, Turmeric); Tuber (Potato); Corm (\textit{Colocasia}, \textit{Amorphophallus} / Zaminkand); Bulb (Onion, Garlic).
+  \item \textbf{Stem Tendrils (Axillary buds):} Slender, spirally coiled for climbing in Gourds (Cucumber, Pumpkin, Watermelon) and Grapevines.
+  \item \textbf{Thorns (Axillary buds):} Woody, straight, pointed for defense against browsers in \textit{Citrus} and \textit{Bougainvillea}.
+  \item \textbf{Phylloclades (Photosynthetic stems):} Flattened green stem in \textit{Opuntia}; fleshy cylindrical in \textit{Euphorbia}. Cladodes: one internode long in \textit{Asparagus}.
+  \item \textbf{Vegetative Propagation:} Runners (Grasses, Strawberry); Stolons (Mint, Jasmine); Offsets (one-internode lateral branch with rosette of leaves: \textit{Pistia}, \textit{Eichhornia}); Suckers (Banana, Pineapple, \textit{Chrysanthemum}).
+\end{itemize}
+
+\subsubsection{Leaf Morphology \& Inflorescence}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Venation:} Reticulate (network, Dicots) vs Parallel (parallel veins, Monocots).
+  \item \textbf{Phyllotaxy (Arrangement of leaves on stem):}
+  \begin{itemize}[label=$\circ$]
+    \item Alternate: Single leaf at each node (Mustard, China rose, Sunflower).
+    \item Opposite: Pair of leaves at each node (\textit{Calotropis}, Guava).
+    \item Whorled: More than two leaves at a node (\textit{Alstonia}).
+  \end{itemize}
+  \item \textbf{Leaf Modifications:} Tendrils (Pea); Spines (Cactus); Phyllode (expanded green petiole: Australian \textit{Acacia}); Pitcher (\textit{Nepenthes}).
+  \item \textbf{Inflorescence:}
+  \begin{itemize}[label=$\circ$]
+    \item Racemose: Main axis continues to grow indefinitely; flowers borne laterally in \textbf{acropetal succession} (oldest at base).
+    \item Cymose: Main axis terminates in a flower (limited growth); flowers borne in \textbf{basipetal succession} (oldest at apex).
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Flower Anatomy: Symmetry, Ovary Position \& Aestivation}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Symmetry:} Actinomorphic (radial: Mustard, \textit{Datura}, Chilli); Zygomorphic (bilateral: Pea, Gulmohar, Bean, \textit{Cassia}); Asymmetric (irregular: \textit{Canna}).
+  \item \textbf{Ovary Insertion:}
+  \begin{itemize}[label=$\circ$]
+    \item Hypogynous (Superior Ovary): Mustard, China rose, Brinjal.
+    \item Perigynous (Half-Inferior Ovary): Thalamus cup-shaped; Plum, Rose, Peach.
+    \item Epigynous (Inferior Ovary): Thalamus completely encloses ovary; Guava, Cucumber, ray florets of Sunflower.
+  \end{itemize}
+  \item \textbf{Aestivation (Petal/Sepal arrangement in bud):}
+  \begin{itemize}[label=$\circ$]
+    \item Valvate: Margins touch without overlapping (\textit{Calotropis}).
+    \item Twisted: One margin regularly overlaps the next (China rose, Lady's finger, Cotton).
+    \item Imbricate: Margins overlap irregularly with no direction (\textit{Cassia}, Gulmohar).
+    \item Vexillary (Papilionaceous): 5 petals: 1 large posterior Standard (Vexillum), 2 lateral Wings (Alae), 2 anterior fused Keel (Carina). Examples: Pea, Bean.
+  \end{itemize}
+  \item \textbf{Placentation:}
+  \begin{itemize}[label=$\circ$]
+    \item Marginal: Ovules along ventral suture of unilocular ovary (Pea).
+    \item Axile: Multilocular ovary, placentae on central axis (China rose, Tomato, Lemon).
+    \item Parietal: Ovules on inner wall; 1-chambered becoming 2-chambered via false septum (replum) (Mustard, \textit{Argemone}).
+    \item Free Central: Ovules on central axis, septa absent (Dianthus, Primrose).
+    \item Basal: Single ovule at base of unilocular ovary (Sunflower, Marigold).
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Key Angiosperm Families}
+\begin{table}[h]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l X X X}
+\toprule
+\textbf{Feature} & \textbf{Fabaceae (Legume / Pea)} & \textbf{Solanaceae (Potato Family)} & \textbf{Liliaceae (Lily / Monocot)} \\
+\midrule
+Habit & Herbs, shrubs, trees; root nodules & Herbs, shrubs, rarely small trees & Perennial herbs with bulb/corm \\
+Leaves & Pinnately compound, pulvinate base & Alternate, simple, exstipulate & Basal, alternate, parallel venation \\
+Symmetry & Zygomorphic ($\%$) & Actinomorphic ($\oplus$) & Actinomorphic ($\oplus$) \\
+Calyx / Corolla & $\text{K}_{(5)}$; $\text{C}_{1+2+(2)}$ (Vexillary) & $\text{K}_{(5)}$ (persistent); $\text{C}_{(5)}$ (valvate) & Perianth: $\text{P}_{(3+3)}$ (tepals united) \\
+Androecium & $\text{A}_{(9)+1}$ (Diadelphous, dithecous) & $\text{A}_5$ (Epipetalous, alternipetalous) & $\text{A}_{3+3}$ (Epitepalous) \\
+Gynoecium & $\underline{\text{G}}_1$ (Monocarpellary, superior) & $\underline{\text{G}}_{(2)}$ (Bicarpellary, oblique, swollen) & $\underline{\text{G}}_{(3)}$ (Tricarpellary, trilocular) \\
+Placentation & Marginal placentation & Axile placentation (swollen placenta) & Axile placentation \\
+Fruit \& Seed & Legume; Non-endospermic & Berry or capsule; Endospermic & Capsule; Endospermic \\
+Floral Formula & $\% \;\text{K}_{(5)} \;\text{C}_{1+2+(2)} \;\text{A}_{(9)+1} \;\underline{\text{G}}_1$ & $\oplus \;\text{K}_{(5)} \;\widehat{\text{C}}_{(5)} \;\text{A}_5 \;\underline{\text{G}}_{(2)}$ & $\oplus \;\widehat{\text{P}}_{(3+3)} \;\text{A}_{3+3} \;\underline{\text{G}}_{(3)}$ \\
+Examples & Gram, Arhar, Moong, Soya, Groundnut, Mulethi, Indigofera & Tomato, Brinjal, Potato, Chilli, Belladonna, Ashwagandha, Petunia & Tulip, \textit{Gloriosa}, \textit{Aloe}, \textit{Asparagus}, \textit{Colchicum autumnale} \\
+\bottomrule
+\end{tabularx}
+\caption{Comprehensive Comparison of NEET Syllabus Angiosperm Families}
+\end{table}
+
+\vspace{10pt}
+
+% =========================================================================
+% PART IV: BIOLOGY (ZOOLOGY)
+% =========================================================================
+\section{Biology --- Zoology: Excretory Systems \& Musculoskeletal Mechanics}
+
+\subsection{9. Excretory Products and Their Elimination}
+
+\subsubsection{Nitrogenous Waste Excretion Modes}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Ammonotelism:} Excretion of highly toxic ammonia ($NH_3$). Highly soluble, requires massive water volume ($300$--$500\text{ mL/g}$). Diffuses readily across body/gill surfaces as ammonium ions ($NH_4^+$). Kidneys play \textbf{no significant role} in ammonia excretion. Examples: Bony fishes, aquatic amphibians (tadpole), aquatic insects.
+  \item \textbf{Ureotelism:} Excretion of urea. Ammonia converted to urea in the \textbf{liver} via the \textbf{Ornithine (Urea) Cycle}. Moderately toxic, requires less water ($50\text{ mL/g}$). Some urea retained in medullary matrix to maintain interstitial hyperosmolarity. Examples: Mammals, terrestrial amphibians (adult frog), cartilaginous marine fishes (sharks).
+  \item \textbf{Uricotelism:} Excretion of uric acid as a white paste or insoluble pellet with minimal water loss ($10\text{ mL/g}$). Least toxic mode, vital terrestrial water conservation adaptation. Examples: Reptiles, birds, land snails, insects.
+\end{itemize}
+
+\subsubsection{Human Excretory System \& Nephron Architecture}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Kidneys:} Retroperitoneal, bean-shaped, situated between $T_{12}$ and $L_3$ vertebrae. Longitudinal section shows outer cortex and inner medulla organized into renal medullary pyramids separated by \textbf{Columns of Bertini}.
+  \item \textbf{Nephron:} Structural and functional unit ($\approx 1\text{ million}$ per kidney).
+  \begin{itemize}[label=$\circ$]
+    \item \textit{Renal Corpuscle (Malpighian Body):} Glomerulus (capillary tuft from afferent arteriole, draining into narrower efferent arteriole) + Bowman's Capsule. The inner visceral layer of Bowman's capsule is lined by specialized \textbf{podocytes} with intricate pedicels leaving filtration slits (slit pores).
+    \item \textit{Renal Tubule:} Proximal Convoluted Tubule (PCT) $\to$ Henle's Loop (descending limb + ascending limb) $\to$ Distal Convoluted Tubule (DCT) $\to$ Collecting Duct.
+    \item \textit{Cortical Nephrons (85\%):} Short loop of Henle extending barely into medulla; vasa recta highly reduced or absent.
+    \item \textit{Juxtamedullary Nephrons (15\%):} Deep loop of Henle descending into inner medulla; well-developed vasa recta; indispensable for \textbf{concentrating urine}.
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Urine Formation Mechanisms}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+  \item \textbf{1. Glomerular Ultrafiltration:} Filtration across three layers: glomerular capillary endothelium, basement membrane, and podocyte slit pores.
+  \[
+    \text{Net Filtration Pressure (NFP)} = \text{GHP} - (\text{BCOP} + \text{CHP}) = 60 - (32 + 18) = 10 \, \text{mmHg}
+  \]
+  \textbf{Glomerular Filtration Rate (GFR):} $125 \, \text{mL/min} = 180 \, \text{L/day}$.
+  \item \textbf{2. Tubular Reabsorption:} Over $99\%$ of filtrate is reabsorbed ($180\text{ L}$ filtrate $\to 1.5\text{ L}$ urine daily).
+  \begin{itemize}[label=$\circ$]
+    \item \textit{PCT:} Reabsorbs $70$--$80\%$ of electrolytes and water. Reabsorbs $100\%$ of glucose and amino acids by secondary active transport. Lined by simple cuboidal epithelium with \textbf{brush border microvilli}.
+    \item \textit{Henle's Loop:}
+    \begin{itemize}
+      \item \textit{Descending Limb:} Permeable to water, virtually impermeable to electrolytes $\implies$ filtrate becomes concentrated (\textbf{hypertonic}).
+      \item \textit{Ascending Limb:} Impermeable to water, actively and passively transports electrolytes ($Na^+, Cl^-$) into interstitium $\implies$ filtrate becomes dilute (\textbf{hypotonic}).
+    \end{itemize}
+    \item \textit{DCT:} Conditional reabsorption of $Na^+$ and water under Aldosterone and ADH. Reabsorbs $\text{HCO}_3^-$.
+    \item \textit{Collecting Duct:} Reabsorbs substantial water to yield concentrated urine; diffuses small quantities of urea into medullary interstitium.
+  \end{itemize}
+  \item \textbf{3. Tubular Secretion:} Active secretion of $H^+$, $K^+$, and $NH_3$ into the filtrate in PCT and DCT to maintain systemic ionic balance and physiological $pH$ ($7.4$).
+\end{itemize}
+
+\begin{formulabox}[Counter-Current Multiplier System]
+\textbf{Components:} Loop of Henle and Vasa Recta running in antiparallel counter-current flows.
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+  \item Establishes a steep medullary osmotic gradient: $300 \, \text{mOsmol/L}$ in renal cortex up to $1200 \, \text{mOsmol/L}$ in deep inner medulla.
+  \item Mediated by active transport of $NaCl$ from ascending Henle's limb into descending vasa recta, and diffusion of urea from collecting duct.
+  \item Permits human kidneys to produce urine \textbf{4 times more concentrated} ($\approx 1200\text{ mOsmol/L}$) than initial blood filtrate ($300\text{ mOsmol/L}$).
+\end{itemize}
+\end{formulabox}
+
+\subsubsection{Hormonal Regulation of Kidney Function}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Hypothalamic Osmoreceptor--ADH Axis:} Dehydration or high osmolarity stimulates hypothalamic osmoreceptors $\to$ Neurohypophysis releases \textbf{Antidiuretic Hormone (ADH / Vasopressin)} $\to$ Inserts aquaporin channels into DCT and Collecting Duct $\to$ Massive water reabsorption (prevents diuresis) + systemic vasoconstriction elevating BP and GFR.
+  \item \textbf{Renin--Angiotensin--Aldosterone System (RAAS):} Fall in glomerular blood flow/pressure stimulates \textbf{Juxtaglomerular (JG) cells} to secrete \textbf{Renin}:
+  \[
+    \text{Angiotensinogen (Liver)} \xrightarrow{\text{Renin}} \text{Angiotensin I} \xrightarrow{\text{ACE (Lungs)}} \text{Angiotensin II}
+  \]
+  Angiotensin II is a potent vasoconstrictor and stimulates adrenal cortex to release \textbf{Aldosterone}, promoting active $Na^+$ and water reabsorption in DCT.
+  \item \textbf{Atrial Natriuretic Factor (ANF):} High venous return/BP stretches heart atria $\to$ releases ANF $\to$ Vasodilation + promotes $Na^+$ excretion (natriuresis) $\to$ Lowers BP, directly \textbf{antagonizing and checking the RAAS axis}.
+\end{itemize}
+
+\subsubsection{Excretory Disorders}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Uremia:} Accumulation of urea and nitrogenous toxins in blood due to kidney failure. Managed by \textbf{hemodialysis}: blood drawn from radial artery, mixed with anticoagulant (heparin), passed through dialyzing unit with cellophane tubes immersed in dialyzing fluid (identical to plasma except lacking nitrogenous wastes), then cleared blood mixed with anti-heparin and returned through a vein.
+  \item \textbf{Renal Calculi (Kidney Stones):} Insoluble crystallized salts, primarily \textbf{calcium oxalate}, precipitating in renal pelvis.
+  \item \textbf{Glomerulonephritis:} Inflammation of glomeruli caused by immune complex deposition.
+\end{itemize}
+
+\subsection{10. Locomotion and Movement}
+
+\subsubsection{Types of Movement \& Muscle Tissue Classification}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Types of Animal Movement:} Amoeboid (pseudopodia with actin microfilaments: Macrophages and Neutrophils); Ciliary (coordinated cilia: respiratory trachea, fallopian tubes/oviducts); Flagellar (spermatozoa); Muscular (limbs, jaw, tongue).
+  \item \textbf{Skeletal Muscle:} Striated, voluntary, multinucleated (\textbf{syncytium}), peripherally positioned nuclei, attached to bones by tendons.
+  \item \textbf{Visceral / Smooth Muscle:} Non-striated, involuntary, uninucleated, spindle-shaped (fusiform), located in walls of hollow internal visceral organs (gut, blood vessels, bladder).
+  \item \textbf{Cardiac Muscle:} Striated, involuntary, uninucleated, branched, with \textbf{intercalated discs} containing gap junctions allowing synchronized electrical contraction.
+\end{itemize}
+
+\subsubsection{Skeletal Muscle Ultrastructure}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Organizational Hierarchy:} Skeletal Muscle $\to$ Muscle Fascicles (enclosed in Perimysium) $\to$ Muscle Fibres / Cells (enclosed in Sarcolemma) $\to$ Myofibrils $\to$ Myofilaments.
+  \item \textbf{Sarcoplasmic Reticulum (SR):} Specialized endoplasmic reticulum acting as intracellular storehouse for calcium ions ($\text{Ca}^{2+}$).
+  \item \textbf{Sarcomere (Functional Contractile Unit):} Segment between two adjacent \textbf{Z-lines}.
+  \begin{itemize}[label=$\circ$]
+    \item \textbf{A-Band (Anisotropic):} Dark band; contains thick myosin filaments overlapping with thin actin filaments; length remains \textbf{constant} during contraction.
+    \item \textbf{I-Band (Isotropic):} Light band; contains thin actin filaments only; bisected by the elastic Z-line.
+    \item \textbf{H-Zone:} Central light zone of A-band where thick filaments are \textbf{not} overlapped by thin filaments.
+    \item \textbf{M-Line:} Thin fibrous membrane running through the middle of the H-zone holding thick filaments.
+  \end{itemize}
+\end{itemize}
+
+\begin{formulabox}[Molecular Architecture of Contractile Proteins]
+\textbf{1. Thin Filament (Actin):}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+  \item Two helically wound strands of filamentous \textbf{F-actin}, each a polymer of monomeric globular \textbf{G-actin}.
+  \item Two strands of \textbf{Tropomyosin} run along the grooves of F-actin throughout its length.
+  \item \textbf{Troponin Complex:} Globular protein distributed at regular intervals on tropomyosin:
+  \begin{itemize}[label=$\circ$]
+    \item \textit{Troponin T:} Binds to tropomyosin.
+    \item \textit{Troponin I:} Inhibits actin--myosin interaction by masking active sites on actin.
+    \item \textit{Troponin C:} Binds to $\text{Ca}^{2+}$ ions during excitation.
+  \end{itemize}
+\end{itemize}
+
+\textbf{2. Thick Filament (Myosin):}
+\begin{itemize}[leftmargin=1.2em, itemsep=2pt]
+  \item Polymer of monomeric \textbf{Meromyosins}.
+  \item \textbf{Heavy Meromyosin (HMM):} Globular head + short arm; projects outward as cross-arm; contains active \textbf{ATPase enzyme} and specific \textbf{Actin-binding sites}.
+  \item \textbf{Light Meromyosin (LMM):} Elongated tail segment.
+\end{itemize}
+\end{formulabox}
+
+\subsubsection{Sliding Filament Theory of Muscle Contraction}
+\begin{itemize}[leftmargin=1.5em, itemsep=3pt]
+  \item \textbf{Step 1: Neuromuscular Transmission:} Motor neuron action potential reaches motor end plate $\to$ Acetylcholine (ACh) released into synaptic cleft $\to$ binds sarcolemma receptors $\to$ Action potential propagates along sarcolemma into transverse T-tubules.
+  \item \textbf{Step 2: $\text{Ca}^{2+}$ Release \& Unmasking:} Action potential triggers sarcoplasmic reticulum to release $\text{Ca}^{2+}$ into sarcoplasm. $\text{Ca}^{2+}$ binds \textbf{Troponin C} $\to$ conformational shift in tropomyosin $\to$ unmasks active myosin-binding sites on actin.
+  \item \textbf{Step 3: Cross-Bridge Formation:} Myosin head hydrolyzes ATP ($\text{ATP} \to \text{ADP} + P_i$) via ATPase; energized head binds unmasked actin active site forming a \textbf{cross-bridge}.
+  \item \textbf{Step 4: Power Stroke:} Myosin head tilts and pulls actin filaments toward the centre of the sarcomere (M-line), releasing ADP and $P_i$.
+  \item \textbf{Structural Changes During Contraction:}
+  \begin{itemize}[label=$\circ$]
+    \item Sarcomere shortens (Z-lines pulled closer).
+    \item \textbf{I-band reduces} in length.
+    \item \textbf{H-zone narrows and disappears} upon full contraction.
+    \item \textbf{A-band remains strictly constant in length} (Crucial NEET fact!).
+  \end{itemize}
+  \item \textbf{Step 5: Cross-Bridge Detachment:} A new ATP molecule binds to the myosin head, breaking the cross-bridge. ATP hydrolysis recocks the head for the next cycle.
+  \item \textit{Rigor Mortis:} Post-mortem ATP depletion prevents detachment of cross-bridges, causing sustained muscular rigidity.
+\end{itemize}
+
+\subsubsection{Red vs White Muscle Fibres}
+\begin{table}[h]
+\centering
+\small
+\begin{tabularx}{\textwidth}{l X X}
+\toprule
+\textbf{Characteristic} & \textbf{Red Muscle Fibres (Slow-Twitch)} & \textbf{White Muscle Fibres (Fast-Twitch)} \\
+\midrule
+Myoglobin Content & High (deep red color) & Low / trace (pale or whitish color) \\
+Mitochondria & Abundant (rich aerobic machinery) & Few \\
+Sarcoplasmic Reticulum & Moderate / less extensive & Highly extensive (rapid $\text{Ca}^{2+}$ surge) \\
+Contraction Velocity & Slower, sustained contraction & Fast, explosive contraction \\
+Fatigue Resistance & High resistance to fatigue; aerobic & Rapid fatigue due to lactic acid accumulation \\
+Examples & Extensor muscles of human back, flight muscles of migratory birds & Eyeball muscles, flight muscles of sparrows \\
+\bottomrule
+\end{tabularx}
+\caption{Comparison of Skeletal Muscle Fibre Types}
+\end{table}
+
+\subsubsection{Human Skeletal System (Total 206 Bones)}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Axial Skeleton (80 Bones):}
+  \begin{itemize}[label=$\circ$]
+    \item \textbf{Skull (22 bones):}
+    \begin{itemize}
+      \item \textit{Cranial Bones (8):} Frontal (1), Parietal (2), Temporal (2), Occipital (1 with 2 occipital condyles $\to$ \textbf{dicondylic skull}), Sphenoid (1), Ethmoid (1).
+      \item \textit{Facial Bones (14):} Nasal (2), Maxillae (2), Zygomatic (2), Lacrimal (2), Palatine (2), Inferior nasal conchae (2), Vomer (1), Mandible (1, only movable skull bone).
+    \end{itemize}
+    \item \textbf{Associated Skull Bones (7):} Hyoid bone (1, U-shaped at buccal cavity base); Ear ossicles (6: Malleus 2, Incus 2, Stapes 2 --- smallest bone in human body).
+    \item \textbf{Vertebral Column (26 bones):} Cervical ($C_7$, $C_1=\text{Atlas}, C_2=\text{Axis}$), Thoracic ($T_{12}$), Lumbar ($L_5$), Sacral ($S_{(1)}$ fused from 5), Coccygeal ($Co_{(1)}$ fused from 4).
+    \item \textbf{Sternum (1):} Flat breastbone on ventral midline of thorax.
+    \item \textbf{Ribs (12 pairs = 24 bones):} Bicephalic dorsal articulation.
+    \begin{itemize}
+      \item \textit{True Ribs (Pairs 1--7):} Vertebrosternal; attach dorsally to vertebrae and ventrally to sternum via hyaline costal cartilage.
+      \item \textit{False Ribs (Pairs 8--10):} Vertebrochondral; attach ventrally to the costal cartilage of the $7^{\text{th}}$ rib instead of directly to the sternum.
+      \item \textit{Floating Ribs (Pairs 11--12):} Vertebral; not connected ventrally to the sternum at all.
+    \end{itemize}
+  \end{itemize}
+
+  \item \textbf{Appendicular Skeleton (126 Bones):}
+  \begin{itemize}[label=$\circ$]
+    \item \textbf{Pectoral Girdle (4 bones):} Scapula (2, flat triangular bone between $2^{\text{nd}}$ and $7^{\text{th}}$ ribs, dorsal spine terminating in acromion process, glenoid cavity articulating with humerus) + Clavicle (2, collar bone, S-shaped with two curvatures).
+    \item \textbf{Upper Limb Bones (60 bones = 30 $\times$ 2):} Humerus (1), Radius (1), Ulna (1), Carpals (8 wrist bones), Metacarpals (5 palm bones), Phalanges (14: formula $2, 3, 3, 3, 3$).
+    \item \textbf{Pelvic Girdle (2 bones):} Two coxal (hip) bones. Each formed by fusion of \textbf{Ilium, Ischium, and Pubis}. At their junction is the cup-shaped \textbf{Acetabulum} articulating with the femoral head. Two pubic bones join ventrally at the \textbf{Pubic Symphysis} (fibrocartilage).
+    \item \textbf{Lower Limb Bones (60 bones = 30 $\times$ 2):} Femur (1, longest and strongest bone), Patella (1, sesamoid kneecap), Tibia (1), Fibula (1), Tarsals (7 ankle bones), Metatarsals (5 sole bones), Phalanges (14: formula $2, 3, 3, 3, 3$).
+  \end{itemize}
+\end{itemize}
+
+\subsubsection{Joint Classifications \& Musculoskeletal Disorders}
+\begin{itemize}[leftmargin=1.5em, itemsep=2pt]
+  \item \textbf{Fibrous Joints (Synarthroses):} Immovable; bones firmly joined by dense fibrous connective tissue. Example: Sutures between skull bones.
+  \item \textbf{Cartilaginous Joints (Amphiarthroses):} Slightly movable; bones joined by cartilage pads. Examples: Intervertebral discs between adjacent vertebrae, pubic symphysis.
+  \item \textbf{Synovial Joints (Diarthroses):} Freely movable; characterized by a fluid-filled \textbf{synovial cavity} lined by synovial membrane between articulating cartilage-covered ends.
+  \begin{itemize}[label=$\circ$]
+    \item \textit{Ball and Socket Joint:} Shoulder joint (humerus \& glenoid cavity) and Hip joint (femur \& acetabulum).
+    \item \textit{Hinge Joint:} Knee joint, elbow joint, interphalangeal joints.
+    \item \textit{Pivot Joint:} Between Atlas and Axis (atlanto-axial joint; "no" head movement); proximal radioulnar joint.
+    \item \textit{Gliding Joint:} Between adjacent carpal bones of wrist; between tarsals of ankle.
+    \item \textit{Saddle Joint:} Between Carpal and Metacarpal of the thumb (\textbf{Classic NEET question!}).
+    \item \textit{Condyloid / Ellipsoid Joint:} Radiocarpal wrist joint; atlanto-occipital joint ("yes" nodding movement).
+  \end{itemize}
+  \item \textbf{Disorders:}
+  \begin{itemize}[label=$\circ$]
+    \item \textbf{Myasthenia Gravis:} Autoimmune disorder affecting neuromuscular junction; antibodies attack acetylcholine receptors; leads to progressive fatigue, weakening, and paralysis of skeletal muscles.
+    \item \textbf{Tetany:} Rapid, violent involuntary muscle spasms caused by hypocalcemia (low $\text{Ca}^{2+}$ in body fluids).
+    \item \textbf{Muscular Dystrophy:} Progressive genetic degeneration of skeletal muscle (e.g., Duchenne muscular dystrophy, X-linked recessive defect in dystrophin).
+    \item \textbf{Osteoarthritis:} Age-related degeneration of articular cartilage, causing joint friction, pain, and bone spurs.
+    \item \textbf{Rheumatoid Arthritis:} Autoimmune inflammation of synovial membrane (pannus formation), eroding articular cartilage; causes severe pain, swelling, and joint deformity.
+    \item \textbf{Gout (Gouty Arthritis):} Metabolic disease caused by accumulation and crystallization of \textbf{uric acid} in synovial joints, particularly the big toe.
+    \item \textbf{Osteoporosis:} Age-related reduction in bone mineral density and deterioration of bone microarchitecture, increasing fracture risk; commonly triggered by \textbf{estrogen deficiency} in postmenopausal women.
+  \end{itemize}
+\end{itemize}
+
+\vfill
+\begin{center}
+  \rule{0.6\textwidth}{0.5pt}\\[6pt]
+  {\small\bfseries\color{primaryteal} End of NEET High-Yield Revision Guide \quad\textbar\quad Prepared by spdedsec}
+\end{center}
+
+\end{document}
